@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactGA from 'react-ga'
-import auth from './auth.ts'
 import './App.css'
 import Advanced from './advanced/Advanced';
 import SessionManager from './session-organizer/sessionManager';
@@ -10,7 +9,6 @@ import WaitingRoom from './waitingroom/waitingRoom';
 const trackingId = "G-SPXTBGNWKN"; // Replace with your Google Analytics tracking ID
 ReactGA.initialize(trackingId);
 ReactGA.set({
-  userId: auth.currentUserId(),
   // any data that is relevant to the user session
   // that you would like to track with google analytics
 })
