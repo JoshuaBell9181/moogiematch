@@ -15,6 +15,9 @@ CMD ["yarn", "run", "start-prod"]
 
 # RUN LOCALLY
 # docker build -t moogie .  
+# docker run -d --net=moogieapp --name redis redis
+# docker run -d --net=moogieapp --name moogie1 -p 5000:5000 -e "REDIS_ENDPOINT=redis" moogie
+# docker run -d --net=moogieapp --name moogie2 -p 5001:5000 -e "REDIS_ENDPOINT=redis" moogie
 # docker run -it -p 5000:5000 moogie
 
 # DOCKER PUSH TO REPO
