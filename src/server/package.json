@@ -1,0 +1,18 @@
+{
+  "name": "moogiepix",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/JoshuaBell9181/moogiepix.git",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "start-prod": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "redis": "^3.1.0",
+    "socket.io": "^4.0.1",
+    "socket.io-redis": "^6.1.0"
+  }
+}
