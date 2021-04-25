@@ -5,14 +5,6 @@ import Advanced from './advanced/Advanced';
 import SessionManager from './session-organizer/sessionManager';
 import WaitingRoom from './waitingroom/waitingRoom';
 
-
-const trackingId = "G-SPXTBGNWKN"; // Replace with your Google Analytics tracking ID
-ReactGA.initialize(trackingId);
-ReactGA.set({
-  // any data that is relevant to the user session
-  // that you would like to track with google analytics
-})
-
 // Settup sockets
 const io = require("socket.io-client");
 const socket = io();
@@ -27,6 +19,12 @@ class App extends React.Component{
     };
     this.hasSessionhandler = this.hasSessionhandler.bind(this)
     this.continueHandler = this.continueHandler.bind(this)
+  }
+
+  componentDidMount() {
+    const trackingId = "UA-194863270-1"; // Replace with your Google Analytics tracking ID
+    ReactGA.initialize(trackingId);
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   continueHandler(){

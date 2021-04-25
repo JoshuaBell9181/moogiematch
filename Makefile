@@ -4,3 +4,6 @@ run:
 build:
 	docker-compose build client
 	docker-compose up --no-deps -d client
+
+down:
+	docker-compose down
