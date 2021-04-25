@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import TinderCard from 'react-tinder-card'
 
+let moviesState = []
 
 function remove_duplicates_safe(arr) {
   var seen = {};
@@ -32,7 +33,9 @@ function Advanced (props) {
   useEffect(()=>{
     fetch("/movies")
     .then(res => res.json())
-    .then(data => setMovies(data));
+    .then(data => {
+      setMovies(data);
+      moviesState = data});
   }, [])
 
   props.socket.on('message', payload => {
@@ -64,7 +67,6 @@ function Advanced (props) {
           movie: movie,
           count: count + 1
         }
-        setmatchedMovies(matchedMovies.push(movieMatch))
         return movieMatch
       } 
     });
@@ -145,8 +147,8 @@ function Advanced (props) {
 
   const outOfFrame = (name) => {
     console.log(name + ' left the screen!')
-    movies = movies.filter(movie => movie.name !== name)
-    setMovies(movies)
+    moviesState = moviesState.filter(movie => movie.name !== name)
+    setMovies(moviesState)
   }
 
   const swipe = (dir) => {
