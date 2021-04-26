@@ -53,7 +53,7 @@ function Advanced (props) {
     const result = othersMatcheMe(payload.movie, payload.count)
     if (result){
       // Create a better match notification
-      result.count = result.count - 1
+
       alert(result.count + " matched for " + payload.movie.name)
     }
   })
@@ -61,15 +61,23 @@ function Advanced (props) {
   const othersMatcheMe = (movie, count)=>{
 
     let movieMatch = undefined;
-    likeMovies.forEach((element)=> { 
+    
+    for(const element of likeMovies){
       if (element.name === movie.name) {
         movieMatch = {
           movie: movie,
-          count: count + 1
+          count: count
         }
-        return movieMatch
+
+        // If movie in matched movies with same count skip
+        if (matchedMovies.findIndex((element2)=>{ return (element2.movie.name === movie.name && element2.count === count) }) >= 0){
+          return false;
+        }
+
+        //Else return
+        setmatchedMovies(matchedMovies.push(movieMatch))
       } 
-    });
+    }
 
     return movieMatch === undefined ? false : movieMatch
   }
