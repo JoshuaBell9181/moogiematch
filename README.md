@@ -27,4 +27,5 @@ The application will be available at `http://localhost:5000`
 If you make changes to the code, you can run:
 
 `make build`
+
 This updates the client application.
