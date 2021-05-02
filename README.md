@@ -9,7 +9,7 @@ Features:
 * Fully defined as infrastructure as code, using AWS CloudFormation to create all the application resources.
 * CI/CD Pipeline using AWS CodePipeline, so that you can just push to the Github and it will automatically deploy.
 * Automated Docker container builds using AWS CodeBuild
-You can view a running copy of this app, deployed on AWS at: moogiematches.com
+You can view a running copy of this app, deployed on AWS at: [Links](https://moogiematches.com)
 
 # Run it locally
 To run the application on your local machine you need:
@@ -19,7 +19,9 @@ To run the application on your local machine you need:
 * make
 
 Execute the following command:
+
 `make run`
+
 The application will be available at `http://localhost:5000`
 
 If you make changes to the code, you can run:
