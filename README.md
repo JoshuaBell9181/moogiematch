@@ -1,5 +1,5 @@
 # Getting Started with Moogie Match
-![moogiematches website gif](https://s3.us-east-2.amazonaws.com/joshuabell.webiste/moogiematches.gif)
+![moogiematches website](https://s3.us-east-2.amazonaws.com/joshuabell.webiste/Screen+Shot+2021-05-02+at+8.12.30+PM.png)
 
 # Run it locally
 To run the application on your local machine you need:
